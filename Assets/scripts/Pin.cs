@@ -22,6 +22,7 @@ public class Pin : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         Ispinned = true;
+        IsLaunchered = false;
         if (collision.gameObject.tag == "TargetCircle")
         {
             Debug.Log("안녕");
@@ -32,8 +33,22 @@ public class Pin : MonoBehaviour
         }
         else if (collision.gameObject.tag == "Pin")
         {
-            Destroy(collision.gameObject);
+           //Destroy(collision.gameObject);
             GameManager.instance.SetGameOver(false);
+            Rigidbody2D rb = GetComponent<Rigidbody2D>();
+            if (rb != null)
+            {
+                rb.gravityScale = 1f;
+                transform.localScale *= 1.2f;
+            }
+
+            Rigidbody2D otherRb = collision.gameObject.GetComponent<Rigidbody2D>();
+            if (otherRb != null)
+            {
+                otherRb.gravityScale = 1f;
+                collision.gameObject.transform.localScale *= 1.2f;  
+            }
+
         }
     }
     // Update is called once per frame

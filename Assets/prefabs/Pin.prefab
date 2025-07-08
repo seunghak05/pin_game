@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8702538355974266802}
   m_Layer: 0
   m_Name: Square
-  m_TagString: Untagged
+  m_TagString: Pin
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -253,4 +253,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30f053118777686408fb0fdefb0b20de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 7
+  moveSpeed: 10
